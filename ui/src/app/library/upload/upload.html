@@ -1,0 +1,10 @@
+<div class="upload-container">
+  <div class="upload-dropzone" [class.dragging]="isDragging" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)" (click)="fileInput.click()">
+    <input #fileInput type="file" (change)="onFileSelected($event)" accept=".pdf" multiple style="display: none;">
+    <div class="upload-icon">
+      <mat-icon>upload_file</mat-icon>
+    </div>
+    <p class="upload-title">{{ isDragging ? 'Drop your PDFs here' : 'Drag & drop PDF files' }}</p>
+    <p class="upload-subtitle">or click to browse — documents are automatically chunked and embedded</p>
+  </div>
+</div>
